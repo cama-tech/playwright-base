@@ -1,6 +1,9 @@
 FROM mcr.microsoft.com/playwright:v1.59.1-jammy
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=America/Lima
+
+RUN apt-get update && apt-get install -y \
     xvfb \
     x11vnc \
     fluxbox \
